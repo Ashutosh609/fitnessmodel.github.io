@@ -140,4 +140,6 @@ app.get('/logout', async (req, res) => {
     }
 })
 
-app.listen(port, () => { })
+app.listen(port, () => {
+    console.log(port)
+ })
