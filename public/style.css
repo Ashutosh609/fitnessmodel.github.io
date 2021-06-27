@@ -1,0 +1,379 @@
+    /*Style for body*/
+
+    body {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        padding: 0px;
+        margin: 0px;
+        background: linear-gradient(orange, rgb(27, 170, 236), cornsilk, lightpink, rgb(47, 233, 30)) no-repeat center center/cover;
+        background-attachment: fixed;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        top: 0%;
+        left: 0%;
+    }
+
+    .header {
+        height: 200px;
+    }
+
+    #navbar {
+        display: flex;
+    }
+
+    .unlist {
+        display: flex;
+        background-color: cornsilk;
+        width: 650px;
+        border-radius: 30px;
+        position: relative;
+    }
+
+    .join{
+        display: flex;
+        margin-right: 0px;
+        width: 600px;
+        border-radius: 30px;
+        justify-content: flex-end;
+        position: relative;
+    }
+
+    .navli:hover, .navlijoin:hover, .logout:hover {
+        border-radius: 20%;
+        background-color: yellow;
+    }
+
+    .navli {
+        list-style: none;
+        /* background-color: cornsilk; */
+        font-family: 'Oswald', sans-serif;
+        font-size: larger;
+        margin: 5px;
+        border-radius: 20%;
+        height: 25px;
+        text-align: center;
+        width: 116px;
+        cursor: pointer;
+    }
+
+    .navlijoin {
+        list-style: none;
+        background-color: rgb(77, 233, 15);
+        font-family: 'Oswald', sans-serif;
+        font-size: larger;
+        margin: 5px;
+        border-radius: 20%;
+        height: 25px;
+        text-align: center;
+        width: 116px;
+        cursor: pointer;
+    }
+
+    .Body, .Brain, .Contact, .Home {
+        display: none;
+        margin: 0px 0px;
+        width: 150px;
+        font-family: initial;
+        position: absolute;
+        text-align: left;
+        box-shadow: 0px 8px 16px 0px rgba(3, 224, 69, 3.0);
+    }
+
+    .Home p, .Body p, .Brain p, .Contact a {
+        text-decoration: none;
+        display: block;
+        font-size: 20px;
+        background-color: lawngreen;
+        color: red;
+        margin: 10px;
+    }
+
+    .Home p:hover, .Brain p:hover, .Body p:hover, .Contact a:hover {
+        background-color: rgb(18, 221, 69);
+    }
+
+    /*style for marquee*/
+
+    #msg {
+        width: auto;
+    }
+
+    #msg h3 {
+        width: 700px;
+        text-align: center;
+        animation-name: work;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+    }
+
+    @keyframes work {
+        0% {
+            border-radius: 10px;
+            background-color: blanchedalmond;
+            color: black;
+        }
+        25% {
+            border-radius: 10px;
+            background-color: cornsilk;
+            color: blue;
+        }
+        50% {
+            border-radius: 10px;
+            background-color: greenyellow;
+            color: black;
+        }
+        75% {
+            border-radius: 10px;
+            background-color: blanchedalmond;
+            color: red;
+        }
+        100% {
+            border-radius: 10px;
+            background-color: cornsilk;
+            color: black;
+        }
+    }
+
+    /*Style for section*/
+
+    .section {
+        text-align: center;
+        display: flex;
+        flex-wrap: wrap;
+        font-family: cursive;
+        font-style: italic;
+        font-size: larger;
+        width: auto;
+        justify-content: center;
+        padding: 25px;
+    }
+
+    /*Style for second page*/
+
+    #Yoga, #Excercise, #Food, #Nutrient {
+        display: none;
+        border: 3px solid red;
+        box-shadow: 0px 0px 9px 9px rgb(238, 177, 11);
+        border-radius: 20px;
+        grid-template-columns: 2fr 2fr 2fr 2fr 2fr 2fr;
+        grid-template-rows: 2fr 2fr 2fr;
+        grid-row-gap: 10px;
+        grid-column-gap: 20px;
+    }
+
+    #Fitness, #Flexibility {
+        display: none;
+        background-image: linear-gradient(to right, rgb(243, 20, 195), darkblue);
+        border: 3px solid red;
+        box-shadow: 0px 0px 9px 9px rgb(238, 177, 11);
+        border-radius: 20px;
+    }
+
+    .Feedback {
+        display: none;
+        border: 3px solid red;
+        width: auto;
+        box-shadow: 0px 0px 9px 9px rgb(238, 177, 11);
+        border-radius: 20px;
+        grid-template-columns: 4fr 1fr;
+        grid-column-gap: 20px;
+    }
+
+    .Login, .Signup {
+        display: none;
+        border: 3px solid red;
+        width: auto;
+        box-shadow: 0px 0px 9px 9px rgb(238, 177, 11);
+        border-radius: 20px;
+        grid-template-columns: 1fr;
+        grid-column-gap: 20px;
+    }
+
+
+    #BMI {
+        display: none;
+        border: 3px solid red;
+        width: 99%;
+        background-image: linear-gradient(to right, yellow, green, orange, pink);
+        box-shadow: 0px 0px 9px 9px rgb(238, 177, 11);
+        border-radius: 20px;
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 20px;
+    }
+
+    #bmical {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 20px;
+        border: 5px solid darkgreen;
+        border-radius: 10px;
+        background-color: lightgreen;
+        box-shadow: 0px 0px 10px 10px red;
+    }
+
+    #bmical div {
+        margin: 10px;
+    }
+
+    #tablechat {
+        border: 5px solid darkblue;
+        background-color: lightpink;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px 10px magenta;
+        margin: 70px auto;
+    }
+
+    #tablechat thead {
+        background-color: magenta;
+        margin: 10px;
+    }
+
+    #tablechat tbody tr:nth-child(even) {
+        background-color: rgb(128, 241, 124);
+    }
+
+    #tablechat tbody tr:nth-child(odd) {
+        background-color: rgb(107, 213, 245);
+    }
+
+    .Feedback textarea {
+        margin: 10px 10px;
+        font-family: initial;
+        font-size: larger;
+        text-align: left;
+    }
+
+    #Yoga a, #Excercise a, #Food a, #Nutrient a {
+        background-color: yellow;
+        border: 3px solid green;
+        text-decoration: none;
+        font-style: italic;
+        font-size: 20px;
+        /* text-shadow: 10px; */
+        text-align: center;
+        margin: 20px auto;
+        width: 100px;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 9px 9px rgb(18, 221, 69);
+    }
+
+    #Fitness div, #Flexibility div {
+        font-style: italic;
+        border: 3px solid green;
+        background-image: linear-gradient(orange, white, green);
+        border-radius: 10px;
+        box-shadow: 0px 0px 9px 9px rgb(18, 221, 69);
+        font-size: 20px;
+        margin: 20px;
+        padding: 20px;
+    }
+
+    /* icon */
+
+    .mainicon{
+        position: relative;
+        margin: auto;
+        display: none;
+        width: 50px;
+    }
+
+    .icon{
+        border: 3px solid rgb(50, 245, 11);
+        margin: 3px;
+        width: 7vw;
+    }
+
+    /* Style for login and signup */
+
+    form div {
+        text-align: right;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    form h1 {
+        text-align: center;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    form div input{
+        margin: 10px 10px;
+        background: none;
+        width: 300px;
+        height: 25px;
+
+
+    }
+
+    @media only screen and (min-width:701px) {
+        .unlist, .join{
+            display: flex;
+        }
+        
+    }
+
+    @media only screen and (max-width:700px) {
+        #Yoga, #Excercise, #Food, #Nutrient, .Feedback {
+            grid-template-rows: repeat(10, auto);
+            grid-template-columns: 1fr;
+            align-items: center;
+            justify-content: center;
+            grid-auto-rows: 2fr;
+            width: auto;
+            margin: 20px auto;
+            width: 300px;
+        }
+        .Body, .Brain, .Contact, .Home {
+            top: -40px;
+            left: 115px;
+            position: relative;
+        }
+        .unlist {
+            display: none;
+            flex-direction: column;
+            background-color: grey;
+            width: auto;
+            padding: 0px;
+        }
+        .join {
+            margin: 10px auto;
+            width: auto;
+        }
+        .header {
+            height: 90px;
+        }
+
+        #navbar{
+            /* flex-direction: column; */
+            background-color: grey;
+            /* align-items: flex-start; */
+        }
+        .navli {
+            margin: 10px;
+            background-color: cornsilk;
+        }
+        #BMI {
+            grid-template-columns: 1fr;
+            align-items: center;
+        }
+
+        .mainicon{
+            display: block;
+            margin: 15px;
+        }
+    }
+
+/* form validation error style  */
+
+.ferror{
+    color: red;
+    text-align: left;
+}
+
+form div p{
+    display:inline-block;
+    width: 230px;
+}
