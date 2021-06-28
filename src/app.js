@@ -1,4 +1,5 @@
-require('dotenv').config();                                     //When you want to make some key private
+const dotenv= require('dotenv');
+dotenv.config({path: '../config.env'});                                     //When you want to make some key private
 
 const express = require('express');
 const path = require('path');
@@ -118,20 +119,20 @@ app.get('/userlogined', async (req, res) => {
 app.get('/logout', async (req, res) => {
     try {
         const token = req.cookies.fit;
-        console.log(token)
+        // console.log(token)
         const verifyuser = jwt.verify(token, process.env.secretkey);
         const user = await Register.findOne({ _id: verifyuser._id });
         res.clearCookie('fit');
 
 
-        console.log(user);
+        // console.log(user);
         // req.user = user;
         user.tokens=user.tokens.filter((currentcookie)=>{
             // console.log(currentcookie)
             return currentcookie.token != token
         })
 
-        console.log(user);
+        // console.log(user);
         await user.save();
 
         res.status(201).redirect('/');
