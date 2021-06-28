@@ -1,5 +1,5 @@
-const dotenv= require('dotenv');
-dotenv.config({path: '../config.env'});                                     //When you want to make some key private
+const dotenv = require('dotenv');
+dotenv.config({ path: '../config.env' });                                     //When you want to make some key private
 
 const express = require('express');
 const path = require('path');
@@ -45,7 +45,9 @@ app.get('/', (req, res) => {
 })
 
 app.post('/feedback', (req, res) => {
-    res.render('feedback')
+    res.render('feedback', {
+        message: "Thanks for your Feedback"
+    })
 })
 
 // Signup Activity
@@ -67,9 +69,12 @@ app.post('/signup', async (req, res) => {
 
         const registered = await registerbodybuilder.save();
 
-        res.status(201).render('feedback');
+        res.status(201).render('feedback', {
+            message:"Successfully Registered"});
     } catch (error) {
-        res.status(400).send(error);
+        res.status(400).render('feedback', {
+            message: "Thanks for your Feedback"
+        })
     }
 })
 
@@ -97,11 +102,15 @@ app.post('/', async (req, res) => {
             res.status(201).redirect('userlogined');
         }
         else {
-            res.status(400).send('Invalid Login Credentials for password')
+            res.status(400).render('feedback', {
+                message: "Invalid Login Credentials"
+            })
         }
 
     } catch (e) {
-        res.status(400).send('Invalid Login Credentials for emailid')
+        res.status(400).render('feedback', {
+            message: "Invalid Login Credentials"
+        })
     }
 })
 
@@ -109,10 +118,14 @@ app.get('/userlogined', async (req, res) => {
     try {
         const token = req.cookies.fit;
         const verifyuser = jwt.verify(token, process.env.secretkey);
-        // console.log(verifyuser)
-        res.status(201).render('indexlog')
+        const user = await Register.findOne({ _id: verifyuser._id });
+        res.status(201).render('indexlog', {
+            username: user.Userid
+        })
     } catch (e) {
-        res.status(201).redirect('/');
+        res.status(400).render('feedback', {
+            message: "Please login again"
+        })
     }
 })
 
@@ -127,7 +140,7 @@ app.get('/logout', async (req, res) => {
 
         // console.log(user);
         // req.user = user;
-        user.tokens=user.tokens.filter((currentcookie)=>{
+        user.tokens = user.tokens.filter((currentcookie) => {
             // console.log(currentcookie)
             return currentcookie.token != token
         })
@@ -135,12 +148,14 @@ app.get('/logout', async (req, res) => {
         // console.log(user);
         await user.save();
 
-        res.status(201).redirect('/');
+        res.status(201).redirect('/')
     } catch (e) {
-        res.status(201).redirect('/');
+        res.status(201).render('feedback', {
+            message: "Something went wrong"
+        })
     }
 })
 
 app.listen(port, () => {
     console.log(port)
- })
+})
