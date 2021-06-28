@@ -73,7 +73,7 @@ app.post('/signup', async (req, res) => {
             message:"Successfully Registered"});
     } catch (error) {
         res.status(400).render('feedback', {
-            message: "Thanks for your Feedback"
+            message: "UserID or EmailID has been already registered"
         })
     }
 })
