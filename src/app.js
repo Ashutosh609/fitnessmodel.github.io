@@ -13,7 +13,7 @@ const Register = require('./models/register');                   //when schema a
 // const { METHODS } = require('http');
 
 const app = express();
-let port = 5000;
+const port = process.env.PORT || 5000;
 
 const stat_path = path.join(__dirname, '../public');
 app.use(express.static(stat_path));
